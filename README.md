@@ -11,7 +11,7 @@ Este é um projeto desenvolvido para consultar informações sobre veículos, ut
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
 - [Licença](#licença)
-## 🛠️ Como Funciona
+## Como Funciona
 
 O projeto conecta-se à API **[Tabela Fipe](https://parallelum.com.br/fipe/api/v1/)** para buscar informações de veículos de diferentes categorias. o fluxo do programa funciona da seguinte forma:
 
@@ -60,3 +60,5 @@ A estrutura inicial do projeto foi criada com o **Spring Initializr**.
 - Listagem dos anos de fabricação e seus respectivos valores.
 - Detalhadamento completo do veículo (valor, marca, modelo, ano, combustível)
 
+## Licença
+Este projeto é de uso livre. Sinta-se à vontade para clonar, modificar e contribuir!
