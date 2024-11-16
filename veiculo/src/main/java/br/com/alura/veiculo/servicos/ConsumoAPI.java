@@ -8,20 +8,21 @@ import java.net.http.HttpResponse;
 
 public class ConsumoAPI {
     public String obterDados(String endereco) {
-
         HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
-        HttpResponse<String> response;
-        try {
-            response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(endereco))
+                .build();
 
-        String json = response.body();
-        return json;
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() != 200) {
+                System.out.println("Erro na API: " + response.statusCode());
+                return null;
+            }
+            return response.body();
+        } catch (IOException | InterruptedException e) {
+            System.out.println("Erro ao se conectar com a API: " + e.getMessage());
+            return null;
+        }
     }
 }
