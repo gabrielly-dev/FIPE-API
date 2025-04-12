@@ -1,64 +1,110 @@
-# Projeto Veículo API
+# 🚗 Projeto Veículo API - Consulta Tabela FIPE
 
-Este é um projeto desenvolvido para consultar informações sobre veículos, utilizando a API pública **Tabela FIPE**. Ele permite obter dados como marcas, modelos, anos e valores de veículos (carros, motos e caminhões).
-## Índice
+[![Java](https://img.shields.io/badge/Java-17+-blue?logo=java)](https://www.java.com/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.1.0-green?logo=spring)](https://spring.io/projects/spring-boot)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-- [Projeto Veículo API](#projeto-veículo-api)
-- [Como funciona?](#como-funciona)
-- [Instalação e uso](#instalação-e-uso)
+🔍 Uma API Java para consulta de veículos na Tabela FIPE, desenvolvida como parte do curso da Alura.
+
+## 📌 Índice
+- [Visão Geral](#-visão-geral)
+- [✨ Funcionalidades](#-funcionalidades)
+- [🚀 Como Usar](#-como-usar)
   - [Pré-requisitos](#pré-requisitos)
-  - [Passo a passo](#passo-a-passo)
-- [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Funcionalidades](#funcionalidades)
-- [Licença](#licença)
-## Como Funciona
+  - [Instalação](#instalação)
+- [🔧 Tecnologias](#-tecnologias)
+- [📚 Exemplos](#-exemplos)
+- [🤝 Contribuição](#-contribuição)
 
-O projeto conecta-se à API **[Tabela Fipe](https://parallelum.com.br/fipe/api/v1/)** para buscar informações de veículos de diferentes categorias. o fluxo do programa funciona da seguinte forma:
+## 🌟 Visão Geral
+Este projeto permite consultar informações completas sobre veículos (carros, motos e caminhões) através da API pública da Tabela FIPE. Desenvolvido em Java com Spring Boot, oferece uma interface simples para acesso a dados como marcas, modelos, anos e valores de veículos.
 
-1. O usuário escolhe o tipo de veículo (carro, moto ou caminhão).
-2. Em seguida decide qual a marca desejada.
-3. Filtra os modelos com base em trechos do nome.
-4. Por fim, obtém os anos disponíveis e os detalhes do veículo como valor, marca, modelo, ano e tipo de combustível, para que possa decidir qual a melhor opção.
+## ✨ Funcionalidades
 
-Os dados são consumidos via requisições HTTP e exibidos de forma interativa no terminal.
-## Instalação e uso
+### 🔹 Consulta Completa de Veículos
+- Listagem de todas as categorias disponíveis (carros, motos, caminhões)
+- Busca de marcas por categoria
+- Filtro de modelos por trecho do nome
+- Detalhamento completo do veículo selecionado
+
+### 📊 Dados Retornados
+| Campo          | Descrição                          |
+|----------------|-----------------------------------|
+| Valor          | Preço médio do veículo            |
+| Marca          | Fabricante do veículo             |
+| Modelo         | Nome do modelo                    |
+| Ano            | Ano de fabricação/modelo          |
+| Combustível    | Tipo de combustível               |
+| Código FIPE    | Código único na tabela FIPE       |
+
+## 🚀 Como Usar
 
 ### Pré-requisitos
+- Java 17 ou superior
+- Maven 3.6+
+- Conexão com internet
 
-- **Java 17** ou superior
-- **Maven** configurado no ambiente
-- Conexão com a Internet
-
-### Passo a Passo
-
+### Instalação
 1. Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/projeto-veiculo-api.git
+```bash
+git clone https://github.com/seu-usuario/projeto-veiculo-api.git
+```
 
-2. Entre no diretório do projeto:
-    ```bash
-    cd projeto-veiculo-api
-3. Compile e execute o projeto:
-    ```bash 
-    mvn spring-boot:run
-4. O programa será iniciado no terminal. Siga as instruções para interagir com o sistema.
+2. Acesse o diretório:
+```bash
+cd projeto-veiculo-api/veiculo
+```
 
+3. Execute o projeto:
+```bash
+mvn spring-boot:run
+```
 
-## Tecnologias Utilizadas
+## 🔧 Tecnologias
+- **Java 17** - Linguagem principal
+- **Spring Boot** - Framework backend
+- **Jackson** - Processamento de JSON
+- **Maven** - Gerenciamento de dependências
+- **HTTP Client** - Comunicação com API FIPE
 
-- **Java** - Linguagem de programação principal
-- **Spring Boot** - Para inicialização e estruturação do projeto
-- **Maven** - Gerenciador de dependências e build
-- **Jackson** - Biblioteca para conversão de JSON em objetos Java
-- **API Tabela FIPE** - Fonte de dados para as consultas.
-A estrutura inicial do projeto foi criada com o **Spring Initializr**.
-## Funcionalidades
+## 📚 Exemplos
 
-- Consulta de veículos por categoria (carros, motos, caminhões)
-- Exibição das marcas e modelos disponíveis
-- Filtragem de modelos por nome
-- Listagem dos anos de fabricação e seus respectivos valores.
-- Detalhadamento completo do veículo (valor, marca, modelo, ano, combustível)
+### Fluxo de Consulta
+1. Selecione o tipo de veículo:
+```
+1 - Carros
+2 - Motos
+3 - Caminhões
+```
 
-## Licença
-Este projeto é de uso livre. Sinta-se à vontade para clonar, modificar e contribuir!
+2. Escolha uma marca:
+```
+1 - Volkswagen
+2 - Fiat
+3 - Chevrolet
+...
+```
+
+3. Filtre modelos:
+```
+Digite um trecho para filtrar: golf
+```
+
+4. Veja os resultados:
+```
+Modelo: Golf 1.6
+Valor: R$ 45.290,00
+Ano: 2020
+Combustível: Gasolina
+```
+
+## 🤝 Contribuição
+Contribuições são bem-vindas! Siga estes passos:
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+## 📄 Licença
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
